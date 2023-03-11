@@ -145,6 +145,7 @@ sample code bearing this copyright.
 
 #ifdef ARDUINO_ARCH_ESP32
 // due to the dual core esp32, a critical section works better than disabling interrupts
+/*
 #define noInterrupts()                                   \
     {                                                    \
         portMUX_TYPE mux = portMUX_INITIALIZER_UNLOCKED; \
@@ -152,6 +153,7 @@ sample code bearing this copyright.
 #define interrupts()         \
     portEXIT_CRITICAL(&mux); \
     }
+*/
 // for info on this, search "IRAM_ATTR" at https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/general-notes.html
 #define CRIT_TIMING IRAM_ATTR
 #else
